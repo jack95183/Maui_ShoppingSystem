@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MauiShoppingSystem.ViewModels"
+             x:DataType="viewModels:LoginPageViewModel"
+             x:Class="MauiShoppingSystem.Views.LoginPage"
+             Title="LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Text="會員登入"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="30"
+            HorizontalOptions="Center" Grid.ColumnSpan="3" Grid.Row="0"/>
+
+        <Image
+           Source="dotnet_bot.png"
+           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+           HeightRequest="200"
+           HorizontalOptions="Center" Grid.ColumnSpan="3" Grid.Row="1"/>
+
+        <Label
+            Text="帳號"
+            VerticalOptions="Center"
+            HorizontalOptions="End" Grid.Row="2" Margin="5"/>
+        <Entry Text="{Binding Userid}" Placeholder="請輸入帳號" Grid.Column="1" VerticalOptions="Center" Grid.Row="2" />
+
+        <Label
+            Text="密碼"
+            VerticalOptions="Center"
+            HorizontalOptions="End"  Grid.Row="3" Margin="5"/>
+        <Entry Text="{Binding Password}" Placeholder="請輸入密碼" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" IsPassword="True" />
+
+        <Label
+            x:Name="LoginResult"
+            Text=""
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="18" TextColor="Red"
+            HorizontalOptions="Center" Grid.Column="1" Grid.Row="4"/>
+
+        <Button Text="登入" Grid.Row="5" Grid.ColumnSpan="3" HeightRequest="50" Command="{Binding LoginCommand}"/>
+        <Button Text="註冊" Grid.Row="6" Grid.ColumnSpan="3" HeightRequest="50" Command="{Binding SignUpGoToAsyncCommand}"/>
+    </Grid>
+</ContentPage>

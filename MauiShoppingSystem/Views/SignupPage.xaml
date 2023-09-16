@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MauiShoppingSystem.ViewModels"
+             x:DataType="viewModels:SignupPageViewModel"
+             x:Class="MauiShoppingSystem.Views.SignupPage"
+             Title="Signup Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Text="會員註冊"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="30"
+            HorizontalOptions="Center" Grid.ColumnSpan="3" Grid.Row="0"/>
+
+        <Label
+            Text="姓名"
+            VerticalOptions="Center"
+            HorizontalOptions="End" Grid.Row="1" Margin="5"/>
+        <Entry Text="{Binding Name}" Placeholder="請輸入姓名" Grid.Column="1" VerticalOptions="Center" Grid.Row="1" />
+
+        <Label
+            Text="電話"
+            VerticalOptions="Center"
+            HorizontalOptions="End"  Grid.Row="2" Margin="5"/>
+        <Entry Text="{Binding Phone}" Placeholder="請輸入電話" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" />
+
+        <Label
+            Text="地址"
+            VerticalOptions="Center"
+            HorizontalOptions="End" Grid.Row="3" Margin="5"/>
+        <Entry Text="{Binding Address}" Placeholder="請輸入地址" Grid.Column="1" VerticalOptions="Center" Grid.Row="3" />
+
+        <Label
+            Text="年齡"
+            VerticalOptions="Center"
+            HorizontalOptions="End" Grid.Row="4" Margin="5"/>
+        <Entry Text="{Binding Age}" Placeholder="請輸入年齡" Grid.Column="1" VerticalOptions="Center" Grid.Row="4" />
+
+        <Label
+            Text="帳號"
+            VerticalOptions="Center"
+            HorizontalOptions="End" Grid.Row="5" Margin="5"/>
+        <Entry Text="{Binding Userid}" Placeholder="請輸入帳號" Grid.Column="1" VerticalOptions="Center" Grid.Row="5" />
+
+        <Label
+            Text="密碼"
+            VerticalOptions="Center"                
+            HorizontalOptions="End" Grid.Row="6" Margin="5"/>
+        <Entry Text="{Binding Password}" Placeholder="請輸入密碼" Grid.Column="1" VerticalOptions="Center" Grid.Row="6" IsPassword="True" />
+
+        <Label
+            Text="密碼確認"
+            VerticalOptions="Center"                
+            HorizontalOptions="End" Grid.Row="7" Margin="5"/>
+        <Entry Text="{Binding Checkpassword}" Placeholder="請輸入密碼" Grid.Column="1" VerticalOptions="Center" Grid.Row="7" IsPassword="True" />
+
+        <Label
+            x:Name="LoginResult"
+            Text=""
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="18" TextColor="Red"
+            HorizontalOptions="Center" Grid.Column="1" Grid.Row="8"/>
+
+        <Button Text="確認" Grid.Row="9" Grid.ColumnSpan="3" HeightRequest="50" Command="{Binding SignUpUserCommand}"/>
+        <Button Text="取消" Grid.Row="10" Grid.ColumnSpan="3" HeightRequest="50" Command="{Binding LoginGoToAsyncCommand}"/>
+    </Grid>
+</ContentPage>

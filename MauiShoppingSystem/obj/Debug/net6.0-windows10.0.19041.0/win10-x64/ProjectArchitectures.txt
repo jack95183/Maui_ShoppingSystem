@@ -1,0 +1,1 @@
+C:\Users\123\Downloads\MauiShoppingSystem0915A1\MauiShoppingSystem\MauiShoppingSystem\MauiShoppingSystem.csproj;x64
